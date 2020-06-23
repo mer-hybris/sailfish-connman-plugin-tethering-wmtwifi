@@ -24,7 +24,7 @@ make %{_smp_mflags} KEEP_SYMBOLS=1 release
 
 %install
 rm -rf %{buildroot}
-%make_install
+make DESTDIR=%{buildroot} LIBDIR=%{_libdir} install
 
 %files
 %defattr(-,root,root,-)
