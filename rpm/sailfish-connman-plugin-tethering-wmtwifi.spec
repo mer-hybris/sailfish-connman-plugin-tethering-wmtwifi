@@ -2,7 +2,6 @@ Name: sailfish-connman-plugin-tethering-wmtwifi
 Version: 1.0.0
 Release: 1
 Summary: wmtWifi plugin for tethering
-Group: Development/Libraries
 License: GPLv2
 URL: https://github.com/mer-hybris/sailfish-connman-plugin-tethering-wmtwifi
 Source: %{name}-%{version}.tar.bz2
@@ -24,7 +23,7 @@ make %{_smp_mflags} KEEP_SYMBOLS=1 release
 
 %install
 rm -rf %{buildroot}
-%make_install
+make DESTDIR=%{buildroot} LIBDIR=%{_libdir} install
 
 %files
 %defattr(-,root,root,-)

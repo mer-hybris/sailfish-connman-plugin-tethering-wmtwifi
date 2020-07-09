@@ -36,6 +36,7 @@ SRC_DIR = src
 BUILD_DIR = build
 DEBUG_BUILD_DIR = $(BUILD_DIR)/debug
 RELEASE_BUILD_DIR = $(BUILD_DIR)/release
+LIBDIR ?= /usr/lib
 
 #
 # Tools and flags
@@ -130,7 +131,7 @@ INSTALL_PERM  = 755
 INSTALL = install
 INSTALL_DIRS = $(INSTALL) -d
 INSTALL_FILES = $(INSTALL) -m $(INSTALL_PERM)
-INSTALL_LIB_DIR = $(DESTDIR)/usr/lib/connman/plugins
+INSTALL_LIB_DIR = $(DESTDIR)/$(LIBDIR)/connman/plugins
 
 install: $(INSTALL_LIB_DIR)
 	$(INSTALL_FILES) $(RELEASE_PLUGIN) $(INSTALL_LIB_DIR)
