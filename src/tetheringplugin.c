@@ -350,12 +350,12 @@ tethering_changed_notify(
 {
     if (on) {
         DBG("Tethering on");
-        if (tethering_command(CMD_AP_MODE)) {
+        if (tethering_command('0') && tethering_command(CMD_AP_MODE)) {
             tethering_wait(tethering_check_ap);
         }
     } else {
         DBG("Tethering off");
-        if (tethering_command(CMD_STA_MODE)) {
+        if (tethering_command('0') && tethering_command(CMD_STA_MODE)) {
             tethering_wait(NULL);
         }
     }
